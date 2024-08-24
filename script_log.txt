@@ -1,0 +1,100 @@
+Script started at: 2024-07-07 08:24:04
+Message has been sent to yanniamiled1@gmail.com
+Script ended at: 2024-07-07 08:24:09
+Script started at: 2024-07-08 06:00:14
+No borrowed books found.
+Script ended at: 2024-07-08 06:00:14
+No borrowed books found.
+Script ended at: 2024-07-08 06:00:14
+Script started at: 2024-07-09 07:09:07
+Return date is not 2 days from now for student ID: 34
+Script started at: 2024-07-09 07:09:18
+Return date is not 2 days from now for student ID: 34
+Message could not be sent to cjabarca875@gmail.com. Mailer Error: Invalid address:  (From): 
+Script ended at: 2024-07-09 07:09:18
+Message has been sent to cjabarca875@gmail.com
+Script ended at: 2024-07-09 07:09:22
+Script started at: 2024-07-11 02:48:30
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-11 02:48:30
+Script started at: 2024-07-11 02:55:50
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-11 02:55:50
+Script started at: 2024-07-11 07:17:32
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-11 07:17:32
+Script started at: 2024-07-12 06:00:20
+Message could not be sent to arvindoron@gmail.com. Mailer Error: SMTP Error: Could not authenticate.
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-12 06:00:26
+Message has been sent to arvindoron@gmail.com
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-12 06:00:28
+Script started at: 2024-07-13 06:00:38
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-13 06:00:39
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-13 06:00:39
+Script started at: 2024-07-16 12:29:06
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-16 12:29:06
+Script started at: 2024-07-17 06:00:11
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-17 06:00:11
+Script started at: 2024-07-20 15:12:14
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-20 15:12:14
+Script started at: 2024-07-23 06:00:11
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-23 06:00:11
+Script started at: 2024-07-24 07:29:12
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-24 07:29:17
+Script started at: 2024-07-25 06:00:19
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-25 06:00:19
+Script started at: 2024-07-26 06:00:04
+Return date is not 2 days from now for student ID: 34
+Script ended at: 2024-07-26 06:00:05
+Script ended at: 2024-07-26 06:00:05
+Script started at: 2024-07-26 09:15:37
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-26 09:15:37
+Script started at: 2024-07-26 09:16:42
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-26 09:16:42
+Script started at: 2024-07-26 09:17:36
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Message has been sent to cjabarca875@gmail.com
+Script ended at: 2024-07-26 09:18:03
+Script started at: 2024-07-29 13:12:05
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-29 13:12:05
+Script started at: 2024-07-31 06:00:09
+Return date is not 2 days from now for student ID: 34
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-31 06:00:09
+r student ID: 35
+Return date is not 2 days from now for student ID: 35
+Return date is not 2 days from now for student ID: 35
+Script ended at: 2024-07-31 06:00:09

@@ -1,0 +1,92 @@
+<?php
+include("../conn/conn.php");
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['qr_code'])) {
+        $qrCode = $_POST['qr_code'];
+
+
+
+        // $studentid = $conn->query("SELECT * FROM tbl_attendance LEFT JOIN tbl_student ON tbl_student.tbl_student_id = tbl_attendance.tbl_student_id WHERE  generated_code = '$qrCode'");
+
+        // $student = $studentid->fetch_assoc()['tbl_attendance_id'];
+        // echo $student;
+        // exit;
+
+        // $selectStmt = $conn->query("SELECT tbl_student_id FROM tbl_student WHERE generated_code = '$qrCode'");
+
+        $selectStmt = $conn->query("SELECT * FROM tbl_attendance LEFT JOIN tbl_student ON tbl_student.tbl_student_id = tbl_attendance.tbl_student_id WHERE  generated_code = '$qrCode'");
+
+        // $result = $selectStmt->fetch_assoc();
+
+        // $studentID = $result["tbl_student_id"];
+        // $attendanceId = $result['tbl_attendance_id'];
+        // date_default_timezone_set('Asia/Manila');
+        // $timeIn =  date("Y-m-d H:i:s");
+
+
+        // Insert data into tbl_attendance
+        // $insertStmt = $conn->query("INSERT INTO tbl_attendance (tbl_student_id, time_in) VALUES ('$studentID', '$timeIn')");
+
+        date_default_timezone_set('Asia/Manila');
+        $timeIn =  date("Y-m-d H:i:s");
+
+        $result = $selectStmt->fetch_assoc();
+        $studentID = $result["tbl_student_id"];
+        echo $studentID;
+        exit;
+
+        $attendanceId = $result['tbl_attendance_id'];
+
+        // echo $attendanceId;
+        // exit;
+        if ($selectStmt->num_rows > 0) {
+            // echo "INSERT INTO tbl_attendance (tbl_student_id, time_in) VALUES ('$studentID', '$timeIn')";
+            // exit;
+
+            // $insertStmt = $conn->query("INSERT INTO tbl_attendance (tbl_student_id, time_in,status) VALUES ('$studentID', '$timeIn')");
+
+            // header('location:index.php');
+            // $insertStmt = $conn->query("INSERT INTO tbl_attendance (tbl_student_id, time_in, status) VALUES ('$studentID', '$timeIn','0')");
+
+            // header('location:index.php');
+        } else {
+            echo "INSERT INTO tbl_attendance (tbl_student_id, time_in, status) VALUES ('$studentID', '$timeIn','0')";
+            exit;
+
+            $insertStmt = $conn->query("INSERT INTO tbl_attendance (tbl_student_id, time_in, status) VALUES ('$studentID', '$timeIn','0')");
+
+            header('location:index.php');
+        }
+        // if ($selectStmt) {
+        //     $result = $selectStmt->fetch_assoc();
+        //     if ($result !== null) {
+        //         $studentID = $result["tbl_student_id"];
+        //         $attendanceId = $result['tbl_attendance_id'];
+        //         date_default_timezone_set('Asia/Manila');
+        //         $timeIn =  date("Y-m-d H:i:s");
+
+        //         // Insert data into tbl_attendance
+        //         $insertStmt = $conn->query("INSERT INTO tbl_attendance (tbl_student_id, time_in) VALUES ('$studentID', '$timeIn')");
+
+        //         if ($insertStmt) {
+        //             header("Location: index.php");
+        //             exit();
+        //         } else {
+        //             echo "Failed to insert data into tbl_attendance.";
+        //         }
+        //     } else {
+        //         echo "No student found in QR Code";
+        //     }
+        // } else {
+        //     echo "Failed to execute the statement.";
+        // }
+    } else {
+        echo "
+            <script>
+                alert('Please fill in all fields!');
+                window.location.href = 'masterlist.php';
+            </script>
+        ";
+    }
+}

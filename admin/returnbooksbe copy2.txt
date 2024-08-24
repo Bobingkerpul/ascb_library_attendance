@@ -1,0 +1,77 @@
+<?php
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include('../conn/conn.php');
+require("phpMQTT/phpMQTT.php");
+
+use cjabarca\phpMQTT;
+
+$server = "localhost";
+$port = 1883;
+$username = "";
+$password = "";
+$client_id = "phpMQTT-publisher";
+
+// Pagkuha ng JSON input mula sa AJAX request
+$data = file_get_contents("php://input");
+$request = json_decode($data, true);
+
+$response = ['status' => 'error', 'message' => 'Invalid request.'];
+
+if (isset($request['qr_code']) && !empty($request['qr_code'])) {
+    $qr_code = $request['qr_code'];
+    $current_date = date("Y-m-d");
+
+    // Query na kukunin ang mga borrowed books base sa qr_code
+    $sql = "SELECT `id`, `return_date`, `fine` FROM `borrowed_books` WHERE `qr_code` = '$qr_code' AND `book_status` = 0";
+    $result = $conn->query($sql);
+
+    $returned_books = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $book_id = $row['id'];
+        $return_date = $row['return_date'];
+        $fine = $row['fine'];
+
+        if ($current_date > $return_date) {
+            $datetime1 = new DateTime($current_date);
+            $datetime2 = new DateTime($return_date);
+            $interval = $datetime1->diff($datetime2);
+            $days_overdue = $interval->days;
+
+            $new_fine = $fine + (5 * $days_overdue);
+
+            $update_sql = "UPDATE `borrowed_books` SET `book_status` = 1, `fine` = $new_fine, `date_returned` = '$current_date' WHERE `id` = $book_id";
+        } else {
+            $update_sql = "UPDATE `borrowed_books` SET `book_status` = 1, `fine` = 0, `date_returned` = '$current_date' WHERE `id` = $book_id";
+        }
+
+        $conn->query($update_sql);
+
+        $returned_books[] = [
+            'book_id' => $book_id,
+            'return_date' => $current_date
+        ];
+    }
+
+    if (!empty($returned_books)) {
+        $mqtt = new phpMQTT($server, $port, $client_id);
+        if ($mqtt->connect(true, NULL, $username, $password)) {
+            $content = json_encode($returned_books);
+            $mqtt->publish("library/returned_books", $content, 0);
+            $mqtt->close();
+        }
+
+        $response = ['status' => 'success', 'message' => 'Books have been successfully returned'];
+    } else {
+        $response = ['status' => 'error', 'message' => 'No books found for this QR code.'];
+    }
+} else {
+    $response = ['status' => 'error', 'message' => 'No QR code provided.'];
+}
+
+header('Content-Type: application/json');
+echo json_encode($response);
+$conn->close();

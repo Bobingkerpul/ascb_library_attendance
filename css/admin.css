@@ -1,0 +1,187 @@
+    /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap'); */
+
+    * {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Poppins', sans-serif; */
+
+    }
+    :root{
+    --primary: #00072C;
+    --secondary: #061651;
+    --accent: #1A43BF;
+    --white:#fff;
+    }
+
+
+    ul li {
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    }
+
+    .nav-link{
+    color: var(--white);
+    }
+
+    .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 91.5vh;
+    }
+    .heading h4{
+    color: var(--white);
+    font-size: 18px;
+    }
+
+    .student-container {
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .student-container > div {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    }
+
+    .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting_asc_disabled, table.dataTable thead > tr > th.sorting_desc_disabled, table.dataTable thead > tr > td.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting_asc_disabled, table.dataTable thead > tr > td.sorting_desc_disabled {
+    text-align: center;
+    }
+
+    .admin-image{
+    width: 60px;
+    height: 60px;
+    /* overflow: hidden; */
+    /* border-radius: 100%; */
+    }
+    .admin-image img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 100%;
+    }
+
+    .sidebar{
+    /* width: 20%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--primary); */
+
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    /* background-color: var(--primary); */
+    background-image: url('../img/background-image-sidebar.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    }
+    .sidebar::after {
+    content: '';
+    height: 100%;
+    background: linear-gradient(1deg, rgba(0, 48, 131, 0.5802696078431373) 0%, rgba(0, 0, 0, 1) 100%);
+    display: block;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    }
+
+    .main-container{
+    width: 80%;
+    margin-left: 20%;
+    padding: 2%;
+    /* background-image: url('../img/ascblogo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vh; */
+    }
+
+    .border-card{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .heading{
+    background: var(--secondary);
+    }
+
+    .dataTables_length{
+    margin-bottom: 32px;
+    }
+
+
+    .swal2-popup{
+    padding: 4%;
+    }
+
+    .swal2-actions{
+    align-items: center;
+    }
+    .swal2-cancel{
+    margin:0 !important;
+    }
+
+    #swal2-title{
+    margin-top: 24px !important;
+    }
+
+    .card-flip {
+    position:relative;
+    }
+    .card-flip-front,
+    .card-flip-back {
+    backface-visibility:hidden;
+    transition:0.6s;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    }
+    .card-flip-front {
+    transform:perspective(1000px) rotateY(0deg);
+    }
+    :hover > .card-flip-front {
+    transform:perspective(1000px) rotateY(180deg);
+    }
+
+    .card-flip-back {
+    transform:perspective(1000px) rotateY(-179deg);
+    }
+    :hover > .card-flip-back {
+    transform:perspective(1000px) rotateY(0deg);
+    }
+
+    /*Instance-specific example styles*/
+    .card-flip {
+    height:100px;
+    width:100%;
+    }
+    .card-flip-front {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    /* background:teal; */
+    }
+    .card-flip-back {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#03045e
+    }
+    .card-flip-back h6{
+        color: #fff;
+    }
